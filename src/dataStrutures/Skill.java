@@ -1,7 +1,4 @@
-package object;
-
-import java.util.ArrayList;
-import dataStrutures.Choice;
+package dataStrutures;
 
 public class Skill {
 	
@@ -16,11 +13,9 @@ public class Skill {
 	
 	
 	//CONSTRUCTOR  ----------------------------------------------------
-	public Skill(String name) {
+	protected Skill(String name) {
 		this.name=name;
 	}
-	
-	//CHOICES  --------------------------------------------------------
-	private ArrayList<Choice<Skill>> choices=new ArrayList<Choice<Skill>>();
-	
+
+
 }
