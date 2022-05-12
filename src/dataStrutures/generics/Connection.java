@@ -1,11 +1,11 @@
 package dataStrutures.generics;
 
-//TODO idk but if remove crash everythings
-public class Connection <N extends Node<Connection<?>>>{  
-	protected N[] elementsConnected;
+
+public class Connection <E>{  
+	protected Node<E>[] elementsConnected;
 	
 	//CONSTRUCTOR  -----------------------------------------------------
-	public Connection (N elements[]) {
+	public Connection (Node<E> elements[]) {
 		this.elementsConnected=elements;
 		
 		notifyNodeOfConnection();
@@ -13,7 +13,7 @@ public class Connection <N extends Node<Connection<?>>>{
 	/**Call the elements (skill) to notify them of the creation
 	 * of this choice */
 	private void notifyNodeOfConnection() {
-		for(N elem : elementsConnected) {
+		for(Node<E> elem : elementsConnected) {
 			elem.addConnection(this);
 		}
 	}

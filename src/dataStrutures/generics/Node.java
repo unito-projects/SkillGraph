@@ -2,13 +2,27 @@ package dataStrutures.generics;
 
 import java.util.ArrayList;
 
-public class Node <C extends Connection<?>>{
-	
+public class Node <E>{
+	private E element;
 	
 	//CONNECTIONS  ------------------------------------------------
-	private ArrayList<C> connections=new ArrayList<C>();
-	public void addConnection(C connection) {
+	private ArrayList<Connection<E>> connections=new ArrayList<Connection<E>>();
+	public void addConnection(Connection<E> connection) {
 		connections.add(connection);
 	}
-
+	
+	
+	//ELEMENTS  ---------------------------------------------------
+	public E getElement() {
+		return element;
+	}
+	public void setElement(E element) {
+		this.element = element;
+	}
+	
+	
+	//COSTRUCTOR  -------------------------------------------------
+	public Node(E elem) {
+		this.setElement(elem);
+	}
 }

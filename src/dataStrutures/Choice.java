@@ -4,11 +4,11 @@ import dataStrutures.generics.Connection;
 import dataStrutures.generics.Node;
 
 //TODO I do  not understand anything
-public class Choice extends Connection<Node<Connection<?>>> { 
+public class Choice extends Connection<Skill> { 
 	
 	
 	
-	public Choice(Node<Connection<?>>[] elements) {
+	public Choice(Node<Skill>[] elements) {
 		super(elements);
 		// TODO Auto-generated constructor stub
 	}
