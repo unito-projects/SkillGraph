@@ -3,7 +3,7 @@ package dataStrutures;
 import dataStrutures.generics.Connection;
 import dataStrutures.generics.Node;
 
-//TODO I do  not understand
+//TODO I do  not understand anything
 public class Choice extends Connection<Node<Connection<?>>> { 
 	
 	
