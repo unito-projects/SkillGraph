@@ -1,11 +1,13 @@
 package dataStrutures.generics;
 
 
-public class Connection <E>{  
-	protected Node<E>[] elementsConnected;
+public class Connection <S, C>{  
+	private S property;
+	protected Node<S, C>[] elementsConnected;
 	
 	//CONSTRUCTOR  -----------------------------------------------------
-	public Connection (Node<E> elements[]) {
+	public Connection (S propertyConnection, Node<S, C> elements[]) {
+		this.setNodeProperty(propertyConnection);
 		this.elementsConnected=elements;
 		
 		notifyNodeOfConnection();
@@ -13,9 +15,18 @@ public class Connection <E>{
 	/**Call the elements (skill) to notify them of the creation
 	 * of this choice */
 	private void notifyNodeOfConnection() {
-		for(Node<E> elem : elementsConnected) {
+		for(Node<S, C> elem : elementsConnected) {
 			elem.addConnection(this);
 		}
 	}
-
+	
+	//ELEMENTS  ---------------------------------------------------
+	public S getNodeProperty() {
+		return property;
+	}
+	public void setNodeProperty(S element) {
+		this.property = element;
+	}
+	
+	
 }

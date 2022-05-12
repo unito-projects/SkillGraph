@@ -1,12 +1,12 @@
 package dataStrutures;
 
 import java.util.TreeMap;
+import dataStrutures.generics.Node;
 
 public class ListSkill {
 	
 	//CONTRUCTOR  -------------------------------------------------
-	private TreeMap<String, Skill> skills=new TreeMap<String, Skill>();
-	public ListSkill() {}
+	private TreeMap<String, Node<Skill, Choice>> skills=new TreeMap<String, Node<Skill, Choice>>();
 	
 	
 	//ADDER AND REMOVER  ------------------------------------------
@@ -16,7 +16,7 @@ public class ListSkill {
 	public boolean add(String name) {
 		if(skills.containsKey(name)) return false;
 		
-		skills.put(name, new Skill(name));
+		skills.put(name, new Node<>(new Skill(name)));
 		return true;
 	}
 	/**Remove an element 

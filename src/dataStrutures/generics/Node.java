@@ -2,27 +2,27 @@ package dataStrutures.generics;
 
 import java.util.ArrayList;
 
-public class Node <E>{
-	private E element;
+public class Node <S, C>{
+	private S property;
 	
 	//CONNECTIONS  ------------------------------------------------
-	private ArrayList<Connection<E>> connections=new ArrayList<Connection<E>>();
-	public void addConnection(Connection<E> connection) {
+	private ArrayList<Connection<S, C>> connections=new ArrayList<Connection<S, C>>();
+	public void addConnection(Connection<S, C> connection) {
 		connections.add(connection);
 	}
 	
 	
 	//ELEMENTS  ---------------------------------------------------
-	public E getElement() {
-		return element;
+	public S getNodeProperty() {
+		return property;
 	}
-	public void setElement(E element) {
-		this.element = element;
+	public void setNodeProperty(S element) {
+		this.property = element;
 	}
 	
 	
 	//COSTRUCTOR  -------------------------------------------------
-	public Node(E elem) {
-		this.setElement(elem);
+	public Node(S elem) {
+		this.setNodeProperty(elem);
 	}
 }
