@@ -48,12 +48,14 @@ public class CanvasGraph extends JPanel {
         for(int i=0; i<values.length; i++) {
         	//g.drawLine(this.getWidth()/2, this.getHeight()/2, xOnScreen[i], yOnScreen[i]);
         	g.drawLine(this.getWidth()/2, this.getHeight()/2, getXInGraph(1, deltaAngle*i), getYInGraph(1, deltaAngle*i));
+        	g.drawString(""+i, getXInGraph(1.2, deltaAngle*i), getYInGraph(1.2, deltaAngle*i));
+        	
         }
    }
-	private int getYInGraph(double value, double angle) {  //TODO unite in only one methods
+	private int getYInGraph(double value, double angle) {  //TODO unite in only one methods    + check for value too large
 		double minSize=this.getHeight()<this.getWidth()?  this.getHeight():this.getWidth();
 		double module=value*minSize/3;
-		double yRelative=module*Math.sin(angle);
+		double yRelative=module*Math.sin(angle-Math.PI/2);
 		
 		//RETURN 
 		double yCenter=this.getHeight()/2;
@@ -62,7 +64,7 @@ public class CanvasGraph extends JPanel {
 	private int getXInGraph(double value, double angle) {
 		double minSize=this.getHeight()<this.getWidth()?  this.getHeight():this.getWidth();
 		double module=value*minSize/3;
-		double xRelative=module*Math.cos(angle);
+		double xRelative=module*Math.cos(angle-Math.PI/2);
 		
 		//RETURN
 		double xCenter=this.getWidth()/2;
