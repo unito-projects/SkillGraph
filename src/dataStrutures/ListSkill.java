@@ -6,7 +6,8 @@ import dataStrutures.generics.Node;
 public class ListSkill {
 	
 	//CONTRUCTOR  -------------------------------------------------
-	private TreeMap<String, Node<Skill, Choice>> skills=new TreeMap<String, Node<Skill, Choice>>();
+	private TreeMap<String, Node<Skill, Choice>> skills
+		=new TreeMap<String, Node<Skill, Choice>>();
 	
 	
 	//ADDER AND REMOVER  ------------------------------------------
