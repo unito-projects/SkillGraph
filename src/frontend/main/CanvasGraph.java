@@ -1,4 +1,4 @@
-package frontend;
+package frontend.main;
 
 import java.awt.*;
 import javax.swing.*;
@@ -40,6 +40,7 @@ public class CanvasGraph extends JPanel {
         g.setColor(color);
         g.fillPolygon(xOnScreen, yOnScreen, values.length);
         g.setColor(Color.black);
+        
         
         //TEMP
         int minSize=this.getHeight()<this.getWidth()?  this.getHeight():this.getWidth();

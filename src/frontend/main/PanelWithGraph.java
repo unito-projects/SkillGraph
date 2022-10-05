@@ -1,26 +1,21 @@
-package frontend;
+package frontend.main;
 
 import java.awt.GridLayout;
-
+import java.awt.event.*;
 import javax.swing.*;
 
-public class FrameGraph extends JFrame{
-	private static final long serialVersionUID = 7843364792449297253L;
+public class PanelWithGraph extends JPanel implements ActionListener{
+	private static final long serialVersionUID = 2783877432168207499L;
 	
 	
 	//VARIABLE
 	private CanvasGraph canvas=new CanvasGraph();
+	private JButton btnDialog=new JButton("Change Data");
 	
 	
 	//CONSTRUCTOR
-	public FrameGraph() {
-		setParams();
+	public PanelWithGraph() {
 		setComponents();
-	}
-	public void setParams() {
-		this.setTitle("GraphSkill");
-		this.setSize(600, 400);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	public void setComponents() {
 		JSplitPane split=new JSplitPane();
@@ -33,17 +28,24 @@ public class FrameGraph extends JFrame{
 		JPanel ris=new JPanel();
 		ris.setLayout(new GridLayout(11, 1));
 		
-		ris.add(new JButton("Change Data"));
+		ris.add(btnDialog);
+		btnDialog.addActionListener(this);
 		for(int i=0; i<10; i++) { //TODO NOT STATIC
 			ris.add(new JLabel(i+" rendo effettivo"));
 		}
 		
 		return ris;
 	}
-
+	
 	
 	//FOR CANVAS
-	public void setValuesForCanvas(double values[]) {
-		canvas.setValues(values);
+	public void setValues(double[] list) {
+		canvas.setValues(list);
+	}
+	
+	
+	//FOR DIALOG
+	@Override public void actionPerformed(ActionEvent e) {
+		
 	}
 }
