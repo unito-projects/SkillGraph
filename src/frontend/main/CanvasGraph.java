@@ -44,7 +44,14 @@ public class CanvasGraph extends JPanel {
 
 		//TEMP
 		int minSize=this.getHeight()<this.getWidth()?  this.getHeight():this.getWidth();
-		g.drawOval(this.getWidth()/2-minSize/3, this.getHeight()/2-minSize/3, minSize/3*2, minSize/3*2);
+		//g.drawOval(this.getWidth()/2-minSize/3, this.getHeight()/2-minSize/3, minSize/3*2, minSize/3*2);
+
+		//DRAW EXA
+		for(int i=0; i<values.length; i++) {
+			xOnScreen[i]=getXInGraph(1, i*deltaAngle);
+			yOnScreen[i]=getYInGraph(1, i*deltaAngle);
+		}
+		g.drawPolygon(xOnScreen, yOnScreen, values.length);
 
 		for(int i=0; i<values.length; i++) {
 			//g.drawLine(this.getWidth()/2, this.getHeight()/2, xOnScreen[i], yOnScreen[i]);
